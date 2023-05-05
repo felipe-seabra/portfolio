@@ -22,7 +22,7 @@ export const Container = styled.div`
     cursor: pointer;
     letter-spacing: 1px;
     text-decoration: none;
-    color: #fff;
+    color: ${(props) => props.theme.colors.text};
   }
 
   .header__links {
