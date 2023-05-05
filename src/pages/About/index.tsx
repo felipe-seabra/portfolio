@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+/* eslint-disable camelcase */
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import setPageTitle from '../../utils/setPageTitle';
+import fetchGithubApi from '../../utils/fetch';
 
 import { Container } from './styles';
 import { profileImg } from '../../images';
@@ -17,7 +19,19 @@ por favor, entre em contato. Será um prazer conversar com você.`
 const URL_LINKEDIN = 'https://www.linkedin.com/in/felipe-seabra';
 
 export default function About() {
+  const urlToFetch = 'https://api.github.com/users/felipe-seabra';
+  const [githubImage, setGithubImage] = useState('');
+
   useEffect(() => {
+    async function fetchImage() {
+      try {
+        const { avatar_url } = await fetchGithubApi(urlToFetch);
+        setGithubImage(avatar_url);
+      } catch (error) {
+        setGithubImage(profileImg);
+      }
+    }
+    fetchImage();
     setPageTitle('Sobre - Felipe Seabra');
   }, []);
 
@@ -25,7 +39,7 @@ export default function About() {
     <Container className="mt-5">
       <img
         className="img-fluid about__picture"
-        src={profileImg}
+        src={githubImage}
         alt="Foto Felipe Seabra"
       />
       <div className="about__text mt-3">

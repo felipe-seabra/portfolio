@@ -71,7 +71,7 @@ user-select: none;
   border: 2px solid ${(props) => props.theme.colors.secundary};
   border-radius: 8px;
   font-size: 1.2rem;
-  color: ${(props) => props.theme.colors.secundary};
+  color: ${(props) => props.theme.colors.primary};
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -80,8 +80,8 @@ user-select: none;
 }
 
 .btn-go-home:hover{
-  color: ${(props) => props.theme.colors.secundary};
-  border: 2px solid ${(props) => props.theme.colors.secundary};
+  color: ${(props) => props.theme.colors.primary};
+  border: 2px solid ${(props) => props.theme.colors.primary};
 }
 
 .btn-go-home::before {
@@ -91,7 +91,7 @@ user-select: none;
   left: 0;
   width: 0%;
   height: 100%;
-  background: ${(props) => props.theme.colors.primary};
+  background: ${(props) => props.theme.colors.secundary};
   z-index: -1;
   transition: 0.5s;
 }
