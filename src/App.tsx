@@ -8,8 +8,9 @@ import dark from './styles/themes/dark';
 
 import GlobalStyle from './styles/global';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import Content from './components/Content';
+import Footer from './components/Footer';
+import { Background } from './components/Background/Background';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -30,6 +31,7 @@ function App() {
           <Header toggleTheme={toggleTheme} />
           <main>
             <Content />
+            <Background />
           </main>
           <Footer />
         </div>

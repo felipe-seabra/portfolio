@@ -17,11 +17,22 @@ export default createGlobalStyle`
   main {
     height: 80vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
+    position: relative;
   }
 
   span {
     color: ${(props) => props.theme.colors.secundary};
+  }
+
+  #hero {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100vw;
+    height: 100vh;
   }
 `;
