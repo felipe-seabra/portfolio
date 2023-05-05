@@ -7,12 +7,12 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 5%;
   transform: translateY(-50%);
 
   h1 {
-    font-size: 72px;
+    font-size: 4.5rem;
     font-weight: 500;
     line-height: 120%;
     letter-spacing: -0.75px;
