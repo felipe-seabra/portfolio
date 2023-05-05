@@ -9,9 +9,8 @@ export const Container = styled.div`
   justify-content: center;
 
   h1 {
-    font-family: Inter, sans-serif;
     font-size: 72px;
-    font-weight: 900;
+    font-weight: 500;
     max-width: 940px;
     text-align: center;
     line-height: 120%;

@@ -6,7 +6,11 @@ export const Container = styled.div`
   padding-left: 30px;
   text-align: right;
   padding-right: ${window.matchMedia('(max-width: 768px)').matches ? '2em' : '30px'};
-  background: ${(props) => props.theme.colors.primary}};
+  background: ${
+    window.matchMedia('(max-width: 768px)').matches
+      ? (props) => props.theme.colors.primary
+      : 'none'
+  };
   z-index: 999;
 
   header {
