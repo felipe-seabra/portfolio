@@ -32,7 +32,7 @@ export default createGlobalStyle`
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
+    width: 120px;
     height: 100%;
     border: 2px solid ${(props) => props.theme.colors.secundary};
     border-radius: 8px;
@@ -43,12 +43,16 @@ export default createGlobalStyle`
     letter-spacing: 0.1rem;
     z-index: 1;
     overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
     transition: 0.5s;
   }
+
   .global-btn:hover {
-    color: ${(props) => props.theme.colors.secundary};
+    color: ${(props) => props.theme.colors.primary};
     border: 2px solid ${(props) => props.theme.colors.secundary};
   }
+
   .global-btn::before {
     content: '';
     position: absolute;
@@ -56,10 +60,11 @@ export default createGlobalStyle`
     left: 0;
     width: 0%;
     height: 100%;
-    background: ${(props) => props.theme.colors.primary};
+    background: ${(props) => props.theme.colors.secundary};
     z-index: -1;
     transition: 0.5s;
   }
+
   .global-btn:hover::before {
     width: 100%;
     transition: 0.5s;
