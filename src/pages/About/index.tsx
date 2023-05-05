@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { BlurhashCanvas } from 'react-blurhash';
 import setPageTitle from '../../utils/setPageTitle';
 import fetchGithubApi from '../../utils/fetch';
 
@@ -21,6 +22,7 @@ const URL_LINKEDIN = 'https://www.linkedin.com/in/felipe-seabra';
 export default function About() {
   const urlToFetch = 'https://api.github.com/users/felipe-seabra';
   const [githubImage, setGithubImage] = useState('');
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     async function fetchImage() {
@@ -35,13 +37,28 @@ export default function About() {
     setPageTitle('Sobre - Felipe Seabra');
   }, []);
 
+  const handleImageLoad = () => {
+    setLoaded(true);
+  };
+
   return (
     <Container className="mt-5">
       <img
+        style={{ display: loaded ? 'inline-block' : 'none' }}
         className="img-fluid about__picture"
         src={githubImage}
         alt="Foto Felipe Seabra"
+        onLoad={handleImageLoad}
       />
+      {!loaded && (
+        <BlurhashCanvas
+          hash="LEHV6nWB2yk8pyo0adR*.7kCMdnj"
+          className="img-fluid about__picture"
+          width={350}
+          height={350}
+          punch={1}
+        />
+      )}
       <div className="about__text mt-3">
         <h2>Sobre Mim</h2>
         <p>{TEXTS[0]}</p>
