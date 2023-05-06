@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
   max-width: 1200px;
+  margin-bottom: 2rem;
 
   .about__picture {
     max-width: 350px;
@@ -38,11 +40,11 @@ export const Container = styled.div`
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 170px;
+    width: 150px;
     height: 100%;
     border: 2px solid ${(props) => props.theme.colors.secundary};
     border-radius: 8px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: ${(props) => props.theme.colors.secundary};
     text-decoration: none;
     font-weight: 600;
@@ -78,6 +80,7 @@ export const Container = styled.div`
 
   @media screen and (max-width: 990px) {
     .about__picture {
+      margin-top: 7rem;
       max-width: 280px !important;
     }
 

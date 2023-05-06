@@ -11,16 +11,14 @@ export default createGlobalStyle`
     background: ${(props) => props.theme.colors.background};
     font-size: 14px;
     color: ${(props) => props.theme.colors.text};
-    font-family: Inter, sans-serif;;
+    font-family: Inter, sans-serif;
+    position: relative;
+    min-height: 100vh;
   }
 
   main {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     position: relative;
+    min-height: 95vh;
   }
 
   span {
@@ -79,7 +77,8 @@ export default createGlobalStyle`
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
-    width: 100vw;
+    width: 100%;
     height: 100vh;
+    z-index: -1;
   }
 `;

@@ -42,7 +42,7 @@ export default function About() {
   };
 
   return (
-    <Container className="mt-5">
+    <Container className="container">
       <img
         style={{ display: loaded ? 'inline-block' : 'none' }}
         className="img-fluid about__picture"

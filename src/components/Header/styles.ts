@@ -3,14 +3,14 @@ import styled from 'styled-components';
 export const Container = styled.div`
   position: absolute;
   width: 100%;
+  top: 0;
   padding-left: 30px;
   text-align: right;
   padding-right: ${window.matchMedia('(max-width: 768px)').matches ? '2em' : '30px'};
-  background: ${
-    window.matchMedia('(max-width: 768px)').matches
-      ? (props) => props.theme.colors.primary
-      : 'none'
-  };
+  background: ${window.matchMedia('(max-width: 768px)').matches
+    ? (props) => props.theme.colors.primary
+    : 'none'};
+
   z-index: 999;
 
   header {
@@ -81,9 +81,8 @@ export const Container = styled.div`
     opacity: 0.5;
     transition: 0.4s;
   }
-  
+
   .navbar-toggler:hover {
     opacity: 1;
   }
-}
 `;
