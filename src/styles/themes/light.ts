@@ -6,6 +6,7 @@ const light = {
     secundary: '#39A0ED',
 
     background: '#f5f5f5',
+    cardBackground: '#fff',
     text: '#333',
     title: '#fff'
   }

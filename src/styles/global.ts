@@ -18,7 +18,30 @@ export default createGlobalStyle`
 
   main {
     position: relative;
-    min-height: 95vh;
+    min-height: 90vh;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.75px;
+
+    position: relative;
+    z-index: 10;
+  }
+
+  h2 {
+    font-size: 4em;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+
+  p {
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
   }
 
   span {
@@ -32,10 +55,11 @@ export default createGlobalStyle`
     align-items: center;
     width: 120px;
     height: 100%;
-    border: 2px solid ${(props) => props.theme.colors.secundary};
+    border: 2px solid ${(props) => props.theme.colors.secundary} !important;
+    background: ${(props) => props.theme.colors.primary} !important;
     border-radius: 8px;
     font-size: 1.2rem;
-    color: ${(props) => props.theme.colors.secundary};
+    color: ${(props) => props.theme.colors.secundary} !important;
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 0.1rem;
@@ -47,8 +71,7 @@ export default createGlobalStyle`
   }
 
   .global-btn:hover {
-    color: ${(props) => props.theme.colors.primary};
-    border: 2px solid ${(props) => props.theme.colors.secundary};
+    color: ${(props) => props.theme.colors.primary} !important;
   }
 
   .global-btn::before {
@@ -80,5 +103,11 @@ export default createGlobalStyle`
     width: 100%;
     height: 100vh;
     z-index: -1;
+  }
+
+  .required-field {
+    color: #E5625E;
+    font-size: 0.7em;
+    margin: 0;
   }
 `;

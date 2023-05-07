@@ -11,16 +11,6 @@ export const Container = styled.div`
   left: 5%;
   transform: translateY(-50%);
 
-  h1 {
-    font-size: 4.5rem;
-    font-weight: 500;
-    line-height: 120%;
-    letter-spacing: -0.75px;
-
-    position: relative;
-    z-index: 10;
-  }
-
   #animate-flicker {
     margin-left: 1vw;
     color: ${(props) => props.theme.colors.text};

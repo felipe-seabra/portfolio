@@ -6,6 +6,7 @@ const dark = {
     secundary: '#DC3545',
 
     background: '#191919',
+    cardBackground: '#000',
     text: '#fff',
     title: '#fff'
   }
