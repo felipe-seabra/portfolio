@@ -19,4 +19,10 @@ export const Container = styled.div`
     max-width: 1800px;
     flex-wrap: wrap;
   }
+
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
 `;
