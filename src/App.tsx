@@ -15,6 +15,7 @@ import { Background } from './components/Background/Background';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { AppContextProvider } from './context/Provider';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 function App() {
   const [persisted, setPersisted] = usePresistedState(dark.title);
@@ -37,6 +38,7 @@ function App() {
               <Background />
             </main>
             <Footer />
+            <ScrollToTopButton />
           </div>
         </ThemeProvider>
       </AppContextProvider>
