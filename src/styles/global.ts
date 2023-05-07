@@ -18,7 +18,7 @@ export default createGlobalStyle`
 
   main {
     position: relative;
-    min-height: 95vh;
+    min-height: 90vh;
   }
 
   h1 {
