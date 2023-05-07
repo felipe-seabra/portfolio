@@ -19,8 +19,12 @@ export const Container = styled.div`
   }
 
   .card-body {
-    height: 95%;
     padding: 1.08rem;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
 
   h3 {
@@ -43,12 +47,10 @@ export const Container = styled.div`
   }
 
   .card-btn {
-    position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 150px;
-    height: 100%;
     border: 2px solid ${(props) => props.theme.colors.secundary} !important;
     background: ${(props) => props.theme.colors.primary} !important;
     border-radius: 8px;
@@ -59,7 +61,6 @@ export const Container = styled.div`
     letter-spacing: 0.1rem;
     z-index: 1;
     overflow: hidden;
-    text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
   }
