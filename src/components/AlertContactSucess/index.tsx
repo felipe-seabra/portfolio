@@ -11,24 +11,23 @@ function AlertContactSucess() {
     <Navigate to="/contact" />
   ) : (
     <Container>
-      <div className="mt-5 text-center">
+      <div className="text-center">
         <Alert variant="success" className="container">
           <Alert.Heading>Enviado com sucesso!</Alert.Heading>
           <p>
-            Agradecemos o seu contato e ficamos muito felizes em saber do seu interesse em
-            nossos <em>serviços</em>
+            Agradeço o seu contato e fico muito feliz em saber do seu interesse em meus{' '}
+            <em>serviços</em>
             .
             <br />
           </p>
-          <p>Esperamos que sua experiência conosco supere as suas expectativas.</p>
-          <p className="mb-0">Retornaremos em breve.</p>
+          <p>Espero que sua experiência comigo supere as suas expectativas.</p>
+          <p className="mb-0">Retorno em breve.</p>
         </Alert>
-        <div className="container-fluid mt-5">
+        <div className="mt-5">
           <Link to="/" className="global-btn">
             Voltar
           </Link>
         </div>
-        <div className="mt-5" />
       </div>
     </Container>
   );

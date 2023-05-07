@@ -21,7 +21,7 @@ export const Container = styled.div`
     height: 40px;
     padding: 15px;
     border-radius: 50%;
-    margin: 20px 5px 7px 5px;
+    margin: 0px 5px 7px 5px;
     color: ${(props) => props.theme.colors.text};
     text-decoration: none;
     font-size: 20px;

@@ -10,7 +10,7 @@ function AlertContactError() {
     <Navigate to="/contact" />
   ) : (
     <Container>
-      <div className="mt-5 text-center">
+      <div className="text-center">
         <Alert variant="warning" className="container">
           <Alert.Heading>Falha ao enviar!</Alert.Heading>
           <p>
@@ -21,12 +21,11 @@ function AlertContactError() {
           </p>
           <p>Agradecemos sua compreensão e esperamos retornar em breve.</p>
         </Alert>
-        <div className="container-fluid mt-5">
+        <div className="mt-5">
           <Link to="/" className="global-btn">
             Voltar
           </Link>
         </div>
-        <div className="mt-5" />
       </div>
     </Container>
   );

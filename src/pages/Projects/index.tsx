@@ -48,7 +48,7 @@ function Projects() {
 
   return (
     <Container>
-      <div className="mt-5">
+      <div className="mt-5 mb-5">
         <h2 className="mt-5">Meus Projetos</h2>
         <div className="projects__card-box">{renderCards()}</div>
       </div>

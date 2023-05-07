@@ -16,7 +16,7 @@ interface AppContextProviderProps {
 }
 
 export const AppContext = createContext<AppContextValue>({
-  submitForm: false,
+  submitForm: true,
   setSubmitForm: () => {},
   errorSubmitForm: false,
   setErrorSubmitForm: () => {},
