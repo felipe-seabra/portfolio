@@ -13,8 +13,8 @@ function Content() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/obrigado" element={<Thanks />} />
-      <Route path="/erro" element={<Sorry />} />
+      <Route path="/thanks" element={<Thanks />} />
+      <Route path="/error" element={<Sorry />} />
       <Route path="*" element={<Error />} />
     </Routes>
   );

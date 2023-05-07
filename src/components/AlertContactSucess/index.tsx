@@ -3,12 +3,12 @@ import { Navigate, Link } from 'react-router-dom';
 import Alert from 'react-bootstrap/Alert';
 import { Container } from './styles';
 import { AppContext } from '../../context/Provider';
-import ContactElements from '../ContactElements';
 
 function AlertContactSucess() {
   const { submitForm } = useContext(AppContext);
+
   return !submitForm ? (
-    <Navigate to="/contato" />
+    <Navigate to="/contact" />
   ) : (
     <Container>
       <div className="mt-5 text-center">
@@ -28,9 +28,7 @@ function AlertContactSucess() {
             Voltar
           </Link>
         </div>
-        <div className="mt-5">
-          <ContactElements />
-        </div>
+        <div className="mt-5" />
       </div>
     </Container>
   );

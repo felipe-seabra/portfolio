@@ -6,7 +6,6 @@ import { Container } from './styles';
 import { AppContext } from '../../context/Provider';
 import Form from '../../components/Form';
 import Loading from '../../components/Loading';
-import ContactElements from '../../components/ContactElements';
 
 function Contact() {
   const { submitForm, errorSubmitForm, isLoading } = useContext(AppContext);
@@ -21,17 +20,12 @@ function Contact() {
   } else if (!submitForm) {
     content = <Form />;
   } else if (!errorSubmitForm) {
-    content = <Navigate to="/obrigado" />;
+    content = <Navigate to="/thanks" />;
   } else {
-    content = <Navigate to="/erro" />;
+    content = <Navigate to="/error" />;
   }
 
-  return (
-    <Container>
-      {content}
-      {!isLoading ? <ContactElements /> : null}
-    </Container>
-  );
+  return <Container>{content}</Container>;
 }
 
 export default Contact;

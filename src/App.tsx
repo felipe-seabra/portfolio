@@ -14,6 +14,8 @@ import { Background } from './components/Background/Background';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { AppContextProvider } from './context/Provider';
+
 function App() {
   const [persisted, setPersisted] = usePresistedState(dark.title);
   const [theme, setTheme] = useState(persisted === 'light' ? light : dark);
@@ -25,17 +27,19 @@ function App() {
 
   return (
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <div className="App">
-          <GlobalStyle />
-          <Header toggleTheme={toggleTheme} />
-          <main>
-            <Content />
-            <Background />
-          </main>
-          <Footer />
-        </div>
-      </ThemeProvider>
+      <AppContextProvider>
+        <ThemeProvider theme={theme}>
+          <div className="App">
+            <GlobalStyle />
+            <Header toggleTheme={toggleTheme} />
+            <main>
+              <Content />
+              <Background />
+            </main>
+            <Footer />
+          </div>
+        </ThemeProvider>
+      </AppContextProvider>
     </BrowserRouter>
   );
 }
