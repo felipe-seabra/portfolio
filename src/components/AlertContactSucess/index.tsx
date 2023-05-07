@@ -16,7 +16,7 @@ function AlertContactSucess() {
           <Alert.Heading>Enviado com sucesso!</Alert.Heading>
           <p>
             Agradecemos o seu contato e ficamos muito felizes em saber do seu interesse em
-            nossos <em>cursos</em>
+            nossos <em>serviços</em>
             .
             <br />
           </p>
