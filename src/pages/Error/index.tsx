@@ -7,7 +7,7 @@ import { Container } from './styles';
 
 function Error() {
   useEffect(() => {
-    setPageTitle('Error 404 - Colégio Criarte');
+    setPageTitle('Error 404 - Felipe Seabra');
   }, []);
 
   return (

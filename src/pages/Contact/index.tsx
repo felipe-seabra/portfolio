@@ -12,7 +12,7 @@ function Contact() {
   const { submitForm, errorSubmitForm, isLoading } = useContext(AppContext);
 
   useEffect(() => {
-    setPageTitle('Contato - Colégio Criarte');
+    setPageTitle('Contato - Felipe Seabra');
   }, []);
 
   let content;
