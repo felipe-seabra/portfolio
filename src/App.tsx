@@ -16,6 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { AppContextProvider } from './context/Provider';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import CookieConsentComponent from './components/CookieConsentComponent';
 
 function App() {
   const [persisted, setPersisted] = usePresistedState(dark.title);
@@ -39,6 +40,7 @@ function App() {
             </main>
             <Footer />
             <ScrollToTopButton />
+            <CookieConsentComponent />
           </div>
         </ThemeProvider>
       </AppContextProvider>
