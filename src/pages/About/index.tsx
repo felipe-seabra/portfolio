@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { BlurhashCanvas } from 'react-blurhash';
 import setPageTitle from '../../utils/setPageTitle';
@@ -24,10 +24,12 @@ export default function About() {
   const [githubImage, setGithubImage] = useState('');
   const [loaded, setLoaded] = useState(false);
 
+  const memoizedGithubApiFetch = useMemo(() => fetchGithubApi(urlToFetch), []);
+
   useEffect(() => {
     async function fetchImage() {
       try {
-        const { avatar_url } = await fetchGithubApi(urlToFetch);
+        const { avatar_url } = await memoizedGithubApiFetch;
         setGithubImage(avatar_url);
       } catch (error) {
         setGithubImage(profileImg);

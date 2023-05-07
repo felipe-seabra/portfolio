@@ -20,21 +20,6 @@ export const Container = styled.div`
     width: 590px;
   }
 
-  h2 {
-    color: ${(props) => props.theme.colors.text};
-    font-size: 4em;
-    text-transform: capitalize;
-    margin-bottom: 20px;
-  }
-
-  p {
-    color: ${(props) => props.theme.colors.text};
-    letter-spacing: 1px;
-    line-height: 28px;
-    font-size: 18px;
-    margin-bottom: 45px;
-  }
-
   .talk-btn {
     position: relative;
     display: inline-flex;

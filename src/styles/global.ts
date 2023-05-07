@@ -21,6 +21,29 @@ export default createGlobalStyle`
     min-height: 95vh;
   }
 
+  h1 {
+    font-size: 4.5rem;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.75px;
+
+    position: relative;
+    z-index: 10;
+  }
+
+  h2 {
+    font-size: 4em;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+
+  p {
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+  }
+
   span {
     color: ${(props) => props.theme.colors.secundary};
   }
