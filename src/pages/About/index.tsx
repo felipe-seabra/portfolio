@@ -33,6 +33,7 @@ export default function About() {
         setGithubImage(avatar_url);
       } catch (error) {
         setGithubImage(profileImg);
+        setLoaded(true);
       }
     }
     fetchImage();
