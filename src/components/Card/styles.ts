@@ -47,6 +47,7 @@ export const Container = styled.div`
   }
 
   .card-btn {
+    position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
