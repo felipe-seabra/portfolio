@@ -96,7 +96,7 @@ export default createGlobalStyle`
   }
 
   #hero {
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -109,5 +109,11 @@ export default createGlobalStyle`
     color: #E5625E;
     font-size: 0.7em;
     margin: 0;
+  }
+
+  @media only screen and (max-width: 768px) {
+    #hero {
+      transform: translateX(-50%) translateY(-50%) rotate(90deg);
+    }
   }
 `;
