@@ -12,6 +12,8 @@ Para manter o código limpo e organizado, foram utilizados o Eslint, uma ferrame
 
 Para otimizar a qualidade do código e facilitar o processo de desenvolvimento, o Husky foi usado para otimizar o commitzen. Isso significa que, ao fazer um commit, os arquivos serão verificados automaticamente para garantir que sigam as diretrizes de estilo e qualidade de código.
 
+Além disso, o projeto faz requisições para a API do GitHub para buscar informações de projetos, incluindo imagens e descrições. Essa funcionalidade é possível graças à integração do aplicativo com a API do GitHub, permitindo que o usuário visualize informações detalhadas sobre seus projetos de software diretamente do portfólio. Essa funcionalidade é uma adição importante para qualquer desenvolvedor que deseja mostrar seus projetos de software de forma eficiente e clara em seu portfólio.
+
 ## Rodando localmente
 
 Clone o projeto
