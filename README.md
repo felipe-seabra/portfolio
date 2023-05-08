@@ -1,4 +1,4 @@
-# Theme Switch em React com TypeScript
+# Portfólio em React com TypeScript
 
 Este é um portfólio desenvolvido em React, uma biblioteca JavaScript popular para construir interfaces de usuário interativas. O projeto foi criado usando TypeScript, uma linguagem de programação que adiciona tipagem estática ao JavaScript, tornando o código mais fácil de ler e manter.
 
