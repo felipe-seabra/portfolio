@@ -9,4 +9,8 @@ export const Container = styled.div`
     flex-direction: column;
     min-width: 50vw;
   }
+
+  .checkbox {
+    color: ${(prop) => prop.theme.colors.text};
+  }
 `;

@@ -111,7 +111,7 @@ function Form() {
           <RequiredField isValid={verifyFieldCheckbox(formValues.checkbox)} />
           <BootstrapForm.Check
             label="Aceito enviar meus dados."
-            className="mb-3"
+            className="mb-3 checkbox"
             type="checkbox"
             readOnly={formValues.checkbox}
             name="checkbox"
