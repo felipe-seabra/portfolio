@@ -71,6 +71,7 @@ function Form() {
               <BootstrapForm.Control
                 type="text"
                 placeholder="Nome completo"
+                autoFocus
                 value={formValues.name}
                 name="name"
                 onChange={(e) => setFormValues({ ...formValues, name: e.target.value })}
