@@ -6,7 +6,6 @@ import setPageTitle from '../../utils/setPageTitle';
 function Home() {
   useEffect(() => {
     setPageTitle('Felipe Seabra - Desenvolvedor Web Full-Stack');
-    window.navigator.vibrate(300);
   }, []);
 
   return (
