@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Navigate, Link } from 'react-router-dom';
 import Alert from 'react-bootstrap/Alert';
 import { Container } from './styles';
@@ -6,6 +6,11 @@ import { AppContext } from '../../context/Provider';
 
 function AlertContactError() {
   const { submitForm } = useContext(AppContext);
+
+  useEffect(() => {
+    window.navigator.vibrate(500);
+  }, []);
+
   return !submitForm ? (
     <Navigate to="/contact" />
   ) : (
