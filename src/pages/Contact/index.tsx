@@ -16,7 +16,7 @@ function Contact() {
 
   let content;
   if (isLoading) {
-    content = <Loading />;
+    content = <Loading text="Enviando..." />;
   } else if (!submitForm) {
     content = <Form />;
   } else if (!errorSubmitForm) {

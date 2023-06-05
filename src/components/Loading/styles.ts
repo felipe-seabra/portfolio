@@ -67,3 +67,11 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const Text = styled.h4`
+  color: ${(props) => props.theme.colors.text};
+  font-size: 1.5rem;
+  position: absolute;
+  top: 44%;
+  left: 46%;
+`;
