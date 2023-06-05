@@ -1,19 +1,14 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.footer`
   width: 100%;
   padding: 0 30px;
+`;
 
-  div {
-    color: ${(props) => props.theme.colors.secundary};
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .social-networks {
-    display: flex;
-  }
+export const SocialNetworks = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .social-link {
     background-color: ${(props) => props.theme.colors.secundary};
@@ -35,4 +30,11 @@ export const Container = styled.div`
     color: ${(props) => props.theme.colors.text} !important;
     transform: scale(1.2);
   }
+`;
+
+export const TextToFooter = styled.div`
+  color: ${(props) => props.theme.colors.secundary};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
