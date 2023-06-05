@@ -36,48 +36,46 @@ function Header({ toggleTheme }: Props): JSX.Element {
   };
 
   return (
-    <header>
-      <Container>
-        <Navbar collapseOnSelect expand="md">
-          <Navbar.Brand>
-            <Link to="/" className="header__logo">
-              Felipe
-              <span> Seabra</span>
-            </Link>
-          </Navbar.Brand>
-          <Navbar.Toggle
-            aria-controls="responsive-navbar-nav"
-            onClick={() => setOpen(!open)}
+    <Container>
+      <Navbar collapseOnSelect expand="md">
+        <Navbar.Brand>
+          <Link to="/" className="header__logo">
+            Felipe
+            <span> Seabra</span>
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle
+          aria-controls="responsive-navbar-nav"
+          onClick={() => setOpen(!open)}
+        />
+        <Navbar.Collapse in={open} id="responsive-navbar-nav">
+          <Nav className="container header__links">
+            {NAV_LINKS.map((link) => (
+              <Nav.Link
+                key={link.path}
+                as={Link}
+                to={link.path}
+                className="navlink"
+                onClick={handleClick}
+                active={activeLink === link.path}>
+                {link.label}
+              </Nav.Link>
+            ))}
+          </Nav>
+          <Switch
+            onChange={toggleTheme}
+            checked={title === 'dark'}
+            checkedIcon={false}
+            uncheckedIcon={false}
+            height={10}
+            width={40}
+            handleDiameter={20}
+            offColor={shade(0.15, colors.primary)}
+            onColor={colors.secundary}
           />
-          <Navbar.Collapse in={open} id="responsive-navbar-nav">
-            <Nav className="container header__links">
-              {NAV_LINKS.map((link) => (
-                <Nav.Link
-                  key={link.path}
-                  as={Link}
-                  to={link.path}
-                  className="navlink"
-                  onClick={handleClick}
-                  active={activeLink === link.path}>
-                  {link.label}
-                </Nav.Link>
-              ))}
-            </Nav>
-            <Switch
-              onChange={toggleTheme}
-              checked={title === 'dark'}
-              checkedIcon={false}
-              uncheckedIcon={false}
-              height={10}
-              width={40}
-              handleDiameter={20}
-              offColor={shade(0.15, colors.primary)}
-              onColor={colors.secundary}
-            />
-          </Navbar.Collapse>
-        </Navbar>
-      </Container>
-    </header>
+        </Navbar.Collapse>
+      </Navbar>
+    </Container>
   );
 }
 

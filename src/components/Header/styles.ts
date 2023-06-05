@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.header`
   position: absolute;
   width: 100%;
   top: 0;
@@ -12,10 +12,6 @@ export const Container = styled.div`
     : 'none'};
 
   z-index: 999;
-
-  header {
-    height: 12.5vh;
-  }
 
   .header__logo {
     font-size: 1.5em;
