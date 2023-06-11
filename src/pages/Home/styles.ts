@@ -4,17 +4,18 @@ import styled from 'styled-components';
 export const Container = styled.div`
   color: ${(props) => props.theme.colors.text};
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   justify-content: center;
   position: absolute;
   top: 55%;
   left: 5%;
   transform: translateY(-50%);
+`;
 
-  #animate-flicker {
-    margin-left: 1vw;
-    color: ${(props) => props.theme.colors.text};
-  }
+export const Pipe = styled.span`
+  margin-left: 1vw;
+  color: ${(props) => props.theme.colors.text};
 
   @keyframes is-rotating {
     to {
@@ -78,10 +79,8 @@ export const Container = styled.div`
     }
   }
 
-  #animate-flicker {
-    -webkit-animation: flickerAnimation 1s infinite;
-    -moz-animation: flickerAnimation 1s infinite;
-    -o-animation: flickerAnimation 1s infinite;
-    animation: flickerAnimation 1s infinite;
-  }
+  -webkit-animation: flickerAnimation 1s infinite;
+  -moz-animation: flickerAnimation 1s infinite;
+  -o-animation: flickerAnimation 1s infinite;
+  animation: flickerAnimation 1s infinite;
 `;
