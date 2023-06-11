@@ -59,7 +59,7 @@ function Form() {
   return (
     <Container>
       <div className="pt-5 mt-5 mb-5">
-        <h2 className="text-center mb-4 pt-5">Formulário</h2>
+        <h2 className="text-center mb-4 pt-5">Contato</h2>
         <BootstrapForm className="form" onSubmit={handleFormSubmitIsLoading}>
           <>
             {/* input all name */}
