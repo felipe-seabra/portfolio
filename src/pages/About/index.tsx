@@ -5,7 +5,7 @@ import { BlurhashCanvas } from 'react-blurhash';
 import setPageTitle from '../../utils/setPageTitle';
 import fetchGithubApi from '../../utils/fetch';
 
-import { Container } from './styles';
+import { Container, AboutText } from './styles';
 import { profileImg } from '../../images';
 
 const TEXTS = [
@@ -62,14 +62,14 @@ export default function About() {
           punch={1}
         />
       )}
-      <div className="about__text mt-3">
+      <AboutText>
         <h2>Sobre Mim</h2>
         <p>{TEXTS[0]}</p>
         <p>{TEXTS[1]}</p>
-        <Link className="talk-btn" to={URL_LINKEDIN} target="_blank" rel="noreferrer">
+        <Link className="talk-btn" to="/contact">
           Vamos conversar!
         </Link>
-      </div>
+      </AboutText>
     </Container>
   );
 }

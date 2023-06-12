@@ -16,10 +16,6 @@ export const Container = styled.div`
     box-shadow: 3px 3px ${(props) => props.theme.colors.secundary};
   }
 
-  .about__text {
-    width: 590px;
-  }
-
   .talk-btn {
     position: relative;
     display: inline-flex;
@@ -69,17 +65,22 @@ export const Container = styled.div`
       max-width: 280px !important;
     }
 
-    .about__text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 90%;
-    }
-
     h2 {
       font-size: 2.5em;
       text-align: center;
     }
+  }
+`;
+
+export const AboutText = styled.div`
+  width: 590px;
+  margin-top: 2rem;
+
+  @media screen and (max-width: 990px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
   }
 `;
