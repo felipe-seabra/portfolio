@@ -10,7 +10,7 @@ import Loading from '../Loading';
 import fetchGithubApi from '../../utils/fetch';
 import { noImage } from '../../images';
 
-import { Container } from './styles';
+import { Container, CardBody } from './styles';
 
 function Card({ name, description }: { name: string; description: string }) {
   const [image, setImage] = useState('');
@@ -60,43 +60,42 @@ function Card({ name, description }: { name: string; description: string }) {
 
   return (
     <Container>
-      <div>
-        {!isLoaded ? (
-          <Loading />
-        ) : (
-          <>
-            <img
-              style={{ display: isLoadedImage ? 'inline-block' : 'none' }}
-              src={image}
-              alt={name}
-              onLoad={handleImageLoad}
+      {!isLoaded ? (
+        <Loading />
+      ) : (
+        <>
+          <img
+            style={{ display: isLoadedImage ? 'inline-block' : 'none' }}
+            className="project__image"
+            src={image}
+            alt={name}
+            onLoad={handleImageLoad}
+          />
+          {!isLoadedImage && (
+            <BlurhashCanvas
+              hash="LEHV6nWB2yk8pyo0adR*.7kCMdnj"
+              className="project__image"
+              width={335}
+              height={135}
+              punch={1}
             />
-            {!isLoadedImage && (
-              <BlurhashCanvas
-                hash="LEHV6nWB2yk8pyo0adR*.7kCMdnj"
-                className="img-fluid about__picture"
-                width={335}
-                height={135}
-                punch={1}
-              />
-            )}
-            <div className="card-body">
-              <h3>{newName}</h3>
-              <p>
-                {textToShow}
-                {description.length > MAX_LENGTH && (
-                  <button className="show-more" onClick={toggleShowMore}>
-                    {showMore ? 'ver menos' : 'ver mais'}
-                  </button>
-                )}
-              </p>
-              <Link to={URL} target="_blank" rel="noreferrer" className="card-btn mt-2">
-                Visitar Repositório
-              </Link>
-            </div>
-          </>
-        )}
-      </div>
+          )}
+          <CardBody>
+            <h3>{newName}</h3>
+            <p>
+              {textToShow}
+              {description.length > MAX_LENGTH && (
+                <button className="show-more" onClick={toggleShowMore}>
+                  {showMore ? 'ver menos' : 'ver mais'}
+                </button>
+              )}
+            </p>
+            <Link to={URL} target="_blank" rel="noreferrer" className="card-btn mt-2">
+              Visitar Repositório
+            </Link>
+          </CardBody>
+        </>
+      )}
     </Container>
   );
 }
