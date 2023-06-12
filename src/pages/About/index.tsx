@@ -17,8 +17,6 @@ Sempre atualizado com as últimas tendências, adoro colaborar e aprender com os
 por favor, entre em contato. Será um prazer conversar com você.`
 ];
 
-const URL_LINKEDIN = 'https://www.linkedin.com/in/felipe-seabra';
-
 export default function About() {
   const urlToFetch = 'https://api.github.com/users/felipe-seabra';
   const [githubImage, setGithubImage] = useState('');
