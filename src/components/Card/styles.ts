@@ -13,18 +13,9 @@ export const Container = styled.div`
   overflow: hidden;
   text-align: center;
 
-  img {
+  .project__image {
     width: 100%;
     max-height: 135px;
-  }
-
-  .card-body {
-    padding: 1.08rem;
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
   }
 
   h3 {
@@ -98,4 +89,13 @@ export const Container = styled.div`
       font-size: 0.8em;
     }
   }
+`;
+
+export const CardBody = styled.div`
+  padding: 1.08rem;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 `;

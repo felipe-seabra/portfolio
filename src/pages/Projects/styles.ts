@@ -7,17 +7,10 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 3rem 0;
 
   h2 {
     text-align: center;
-  }
-
-  .projects__card-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1800px;
-    flex-wrap: wrap;
   }
 
   @media (max-width: 768px) {
@@ -25,4 +18,12 @@ export const Container = styled.div`
       font-size: 2.5rem;
     }
   }
+`;
+
+export const PojectsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1800px;
+  flex-wrap: wrap;
 `;
