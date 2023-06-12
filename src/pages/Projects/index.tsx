@@ -5,7 +5,7 @@ import setPageTitle from '../../utils/setPageTitle';
 import fetchGithubApi from '../../utils/fetch';
 import Loading from '../../components/Loading';
 
-import { Container } from './styles';
+import { Container, PojectsContainer } from './styles';
 
 type Repo = {
   id: number;
@@ -48,10 +48,8 @@ function Projects() {
 
   return (
     <Container>
-      <div className="mt-5 mb-5">
-        <h2 className="mt-5">Meus Projetos</h2>
-        <div className="projects__card-box">{renderCards()}</div>
-      </div>
+      <h2 className="mt-5">Meus Projetos</h2>
+      <PojectsContainer>{renderCards()}</PojectsContainer>
     </Container>
   );
 }
