@@ -15,7 +15,7 @@ export const Container = styled.div`
 
   .project__image {
     width: 100%;
-    max-height: 135px;
+    height: 170px;
   }
 
   h3 {
