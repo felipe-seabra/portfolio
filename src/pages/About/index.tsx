@@ -1,7 +1,8 @@
 /* eslint-disable camelcase */
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BlurhashCanvas } from 'react-blurhash';
+import { useQuery } from 'react-query';
 import setPageTitle from '../../utils/setPageTitle';
 import fetchGithubApi from '../../utils/fetch';
 
@@ -21,21 +22,26 @@ export default function About() {
   const [githubImage, setGithubImage] = useState('');
   const [loaded, setLoaded] = useState(false);
 
-  const memoizedGithubApiFetch = useMemo(() => fetchGithubApi(urlToFetch), []);
+  const { data } = useQuery(
+    'picture-profile',
+    async () => {
+      const response = await fetchGithubApi(urlToFetch);
+      return response;
+    },
+    {
+      staleTime: 1000 * 60 * 5 // 5 minutes
+    }
+  );
 
   useEffect(() => {
-    async function fetchImage() {
-      try {
-        const { avatar_url } = await memoizedGithubApiFetch;
-        setGithubImage(avatar_url);
-      } catch (error) {
-        setGithubImage(profileImg);
-        setLoaded(true);
-      }
-    }
-    fetchImage();
     setPageTitle('Sobre - Felipe Seabra');
-  }, []);
+
+    if (data) {
+      setGithubImage(data.avatar_url);
+    } else {
+      setGithubImage(profileImg);
+    }
+  }, [data]);
 
   const handleImageLoad = () => {
     setLoaded(true);
