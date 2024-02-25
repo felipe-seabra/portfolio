@@ -6,16 +6,24 @@
 import React, { useEffect, useState, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { BlurhashCanvas } from 'react-blurhash';
+import { useQuery } from 'react-query';
 import Loading from '../Loading';
 import fetchGithubApi from '../../utils/fetch';
 import { noImage } from '../../images';
 
 import { Container, CardBody } from './styles';
 
-function Card({ name, description }: { name: string; description: string }) {
+function Card({
+  name,
+  description,
+  id
+}: {
+  name: string;
+  description: string;
+  id: number;
+}) {
   const [image, setImage] = useState('');
   const [showMore, setShowMore] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
   const [isLoadedImage, setIsLoadedImage] = useState(false);
 
   const MAX_LENGTH = 85;
@@ -27,21 +35,22 @@ function Card({ name, description }: { name: string; description: string }) {
     .replace(/-/g, ' ')
     .replace(/(^|\s)\S/g, (firstLetter: string) => firstLetter.toUpperCase());
 
-  useEffect(() => {
-    async function fetchDemo() {
-      try {
-        const data = await fetchGithubApi(URL_FETCH_IMAGE);
-        setImage(!data.message ? data.download_url : noImage);
-        setIsLoaded(true);
-      } catch (error) {
-        console.error(error);
-        setImage(noImage);
-        setIsLoaded(true);
-      }
+  const { data, isFetching } = useQuery(
+    `repo-${id}`,
+    async () => {
+      const response = await fetchGithubApi(URL_FETCH_IMAGE);
+      return response;
+    },
+    {
+      staleTime: 1000 * 60 * 5 // 5 minutes
     }
+  );
 
-    fetchDemo();
-  }, [URL_FETCH_IMAGE]);
+  useEffect(() => {
+    if (data) {
+      setImage(!data.message ? data.download_url : noImage);
+    }
+  }, [data]);
 
   const toggleShowMore = () => {
     setShowMore(!showMore);
@@ -60,7 +69,7 @@ function Card({ name, description }: { name: string; description: string }) {
 
   return (
     <Container>
-      {!isLoaded ? (
+      {isFetching ? (
         <Loading />
       ) : (
         <>

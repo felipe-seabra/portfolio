@@ -1,5 +1,5 @@
-/* eslint-disable no-console */
 import React, { useState, useEffect, memo } from 'react';
+import { useQuery } from 'react-query';
 import Card from '../../components/Card';
 import setPageTitle from '../../utils/setPageTitle';
 import fetchGithubApi from '../../utils/fetch';
@@ -17,32 +17,32 @@ function Projects() {
   const [repos, setRepos] = useState<Repo[]>([]);
   const urlToFetch = 'https://api.github.com/users/felipe-seabra/repos';
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const repositories = await fetchGithubApi(urlToFetch);
-        if (repositories) {
-          const filteredRepositories = repositories.filter(
-            (repo: { name: string }) => !repo.name.startsWith('felipe')
-          );
-          setRepos(filteredRepositories);
-        }
-      } catch (err) {
-        console.error(err);
-      }
+  const { data, isFetching } = useQuery(
+    'repos',
+    async () => {
+      const response = await fetchGithubApi(urlToFetch);
+      return response;
+    },
+    {
+      staleTime: 1000 * 60 * 5 // 5 minutes
     }
+  );
 
+  useEffect(() => {
     setPageTitle('Projetos - Felipe Seabra');
-    fetchData();
-  }, [urlToFetch]);
+
+    if (data) {
+      setRepos(data.filter((repo: { name: string }) => !repo.name.startsWith('felipe')));
+    }
+  }, [data]);
 
   const renderCards = () => {
-    if (repos.length < 1) {
+    if (isFetching) {
       return <Loading />;
     }
 
     return repos.map((card) => (
-      <Card key={card.id} name={card.name} description={card.description} />
+      <Card key={card.id} name={card.name} description={card.description} id={card.id} />
     ));
   };
 
